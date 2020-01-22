@@ -20,11 +20,15 @@
 #display {
     grid-column: 1 / 5;
     grid-row: 1 / 1;
-    background-color: honeydew;
+    background-color: #008CBA;
+    border-radius: 8px;
+    border-bottom: 1px solid  black;
+    color: white;
 }
 
 #calcContainer {
     display: grid;
+    gap: 3px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr;
     border: black;
@@ -32,6 +36,9 @@
     width: 450px;
     margin: auto;
     position: relative;
+    background-color: lightslategray;
+    border: 2px solid #2c2c2c;
+    border-radius: 8px;
 }
 
 h1 {
@@ -49,6 +56,32 @@ body {
     text-align: center;
 }
 
+/*button styling */
+.funcBtn {
+    background-color: #f44336;
+    border-radius: 8px;
+    border-color:  black;
+    font-size: 25px;
+    transition-duration: 0.4s;
+}
+.numBtn {
+    background-color: #555555;
+    border-radius: 8px;
+    border-color: black;
+    font-size: 30px;
+    transition-duration: 0.4s;
+}
+.funcBtn:hover {
+    color: white;
+    transform: scale(1.1);
+    border-color: black;
+}
+.numBtn:hover {
+    color: white;
+    transform: scale(1.1);
+    border-color: black;
+}
+
 /*button placement */
 #allCancel {grid-area: 2 / 1 / 2 / 3;}
 #delete {grid-area: 2 / 3 / 2 / 3;}
@@ -56,7 +89,7 @@ body {
 #sub {grid-area: 3 / 4 / 3 / 4;}
 #mult {grid-area: 4 / 4 / 4 / 4;}
 #divi {grid-area: 5 / 4 / 5 / 4;}
-#equals {grid-area: 6 / 3 / 6 / 5;}
+#equals {grid-area: 6 / 3 / 6 / 5; background-color: #4CAF50;}
 #no9 {grid-area: 3 / 3 / 3 / 3;}
 #no8 {grid-area: 3 / 2 / 3 / 2;}
 #no7 {grid-area: 3 / 1 / 3 / 1;}
