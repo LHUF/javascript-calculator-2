@@ -48,3 +48,12 @@ body {
     background-color: darkslategrey;
     text-align: center;
 }
+
+/*button placement */
+#allCancel {grid-area: 2 / 1 / 2 / 3;}
+#delete {grid-area: 2 / 3 / 2 / 3;}
+#add {grid-area: 2 / 4 / 2 / 4;}
+#sub {grid-area: 3 / 4 / 3 / 4;}
+#mult {grid-area: 4 / 4 / 4 / 4;}
+#divi {grid-area: 5 / 4 / 5 / 4;}
+#equals {grid-area: 6 / 3 / 6 / 5;}
