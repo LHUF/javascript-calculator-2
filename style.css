@@ -1,0 +1,46 @@
+#result {
+    text-align: right;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    margin-top: 10px;
+    font-size: 45px;
+}
+
+#runninginput {
+    text-align: right;
+    margin-right: 5%;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+#display {
+    grid-column: 1 / 5;
+    grid-row: 1 / 1;
+    background-color: honeydew;
+}
+
+#calcContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+    border: black;
+    height: 550px;
+    width: 450px;
+    margin: auto;
+    position: relative;
+}
+
+h1 {
+    font-family: monospace;
+    background-color: slategray;
+    color: black;
+    border-style: double;
+    border-color: blue;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+body {
+    background-color: darkslategrey;
+    text-align: center;
+}
