@@ -4,7 +4,10 @@ const numButtons = document.getElementsByClassName("numBtn");
 const addButton = document.getElementById("add");
 let runningInput = document.getElementById("runninginput");
 
-addButton.addEventListener("click", userAdd, false);
+const operatorBtns = document.querySelectorAll(".operator");
+operatorBtns.forEach(function(btn){
+  btn.addEventListener("click", operatorHandler);
+});
 
 //populate display function
 const populateDisplay = function(){
@@ -16,15 +19,14 @@ for (var i = 0; i < numButtons.length; i++){
     numButtons[i].addEventListener('click', populateDisplay, false);
 }
 
-//addbutton
-function userAdd() {
-    if(calcMemory.length > 2) {
-        runningInput.textContent = operate(add, calcMemory[0], calcMemory[2]);
-        calcMemory = [operate(add, calcMemory[0], calcMemory[2])];
-    }
-    calcMemory.push("+")
-    runningInput.textContent += "+";
-}
+function operatorHandler(eventObj){
+    const clickedEl = eventObj.target;
+    const operator = clickedEl.textContent;
+    const split = runningInput.textContent.split(/[×÷+-]/);
+    calcMemory.push((split[split.length -1]));
+    calcMemory.push(operator);
+    runningInput.textContent += operator;
+  }
 
 //operation selection function
 operate = (operation, n1, n2) => {
