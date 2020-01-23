@@ -12,7 +12,6 @@ operatorBtns.forEach(function(btn){
 //populate display function
 const populateDisplay = function(){
     const value = this.getAttribute("data-value");
-    calcMemory.push(parseInt(value));
     runningInput.textContent += value;
 }
 for (var i = 0; i < numButtons.length; i++){
