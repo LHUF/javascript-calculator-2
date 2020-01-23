@@ -1,15 +1,10 @@
-//global variables
 let calcMemory = [];
+let runningInput = document.getElementById("runninginput");
 const numButtons = document.getElementsByClassName("numBtn");
 const addButton = document.getElementById("add");
-let runningInput = document.getElementById("runninginput");
-
 const operatorBtns = document.querySelectorAll(".operator");
-operatorBtns.forEach(function(btn){
-  btn.addEventListener("click", operatorHandler);
-});
 
-//populate display function
+
 const populateDisplay = function(){
     const value = this.getAttribute("data-value");
     runningInput.textContent += value;
@@ -17,6 +12,11 @@ const populateDisplay = function(){
 for (var i = 0; i < numButtons.length; i++){
     numButtons[i].addEventListener('click', populateDisplay, false);
 }
+
+
+operatorBtns.forEach(function(btn){
+    btn.addEventListener("click", operatorHandler);
+  });
 
 function operatorHandler(eventObj){
     const clickedEl = eventObj.target;
@@ -27,7 +27,8 @@ function operatorHandler(eventObj){
     runningInput.textContent += operator;
   }
 
-//operation selection function
+
+
 operate = (operation, n1, n2) => {
     switch(operation){
         case add:
@@ -46,7 +47,6 @@ operate = (operation, n1, n2) => {
     return result;
 }
 
-//basic operation functions
 add = (n1,n2) =>  n1 + n2;
 subtract = (n1,n2) => n1 - n2;
 multiply = (n1,n2) => n1 * n2;
