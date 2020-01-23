@@ -1,6 +1,6 @@
 Recoding and improving on first attempt at Javascript Calculator from The Odin Project. Was not happy with the functionality.
 
-This project has been the most challenging so far. I have had to do a lot of research and solidify my understanding of Javascript fundamental; while also utilising some CSS that I have never used before. Some of these include:
+This project has been the most challenging so far. I have had to do a lot of research and solidify my understanding of Javascript fundamentals; while also utilising some CSS that I have never used before. Some of these include:
 
 JS:
 -switch statements
