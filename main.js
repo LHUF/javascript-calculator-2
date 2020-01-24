@@ -27,15 +27,15 @@ function operatorHandler(eventObj){
     if(calcMemory.length > 2){
         firstNum = parseInt(calcMemory.shift());
         console.log(firstNum)
-        op = calcMemory.shift()
+        let op = calcMemory.shift()
         if(op === "+") op = "add";
         if(op === "-") op = "subtract";
         if(op === "×") op = "multiply";
         if(op === "÷") op = "divide";
         console.log(op)
-        secondNum = parseInt(calcMemory.shift());
+        let secondNum = parseInt(calcMemory.shift());
         console.log(secondNum)
-        answer = operate(op, firstNum, secondNum);
+        let answer = operate(op, firstNum, secondNum);
         console.log(parseInt(answer))
         calcMemory.unshift(answer);
     }
