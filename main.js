@@ -3,6 +3,7 @@ let runningInput = document.getElementById("runninginput");
 const numButtons = document.getElementsByClassName("numBtn");
 const addButton = document.getElementById("add");
 const operatorBtns = document.querySelectorAll(".operator");
+let answer;
 
 
 const populateDisplay = function(){
@@ -23,6 +24,21 @@ function operatorHandler(eventObj){
     const operator = clickedEl.textContent;
     const split = runningInput.textContent.split(/[×÷+-]/);
     calcMemory.push((split[split.length -1]));
+    if(calcMemory.length > 2){
+        firstNum = parseInt(calcMemory.shift());
+        console.log(firstNum)
+        op = calcMemory.shift()
+        if(op === "+") op = "add";
+        if(op === "-") op = "subtract";
+        if(op === "×") op = "multiply";
+        if(op === "÷") op = "divide";
+        console.log(op)
+        secondNum = parseInt(calcMemory.shift());
+        console.log(secondNum)
+        answer = operate(op, firstNum, secondNum);
+        console.log(parseInt(answer))
+        calcMemory.unshift(`${answer}`);
+    }
     calcMemory.push(operator);
     runningInput.textContent += operator;
   }
@@ -31,21 +47,29 @@ function operatorHandler(eventObj){
 
 operate = (operation, n1, n2) => {
     switch(operation){
-        case add:
-        result = add(n1,n2);
+        case "add":
+        answer = add(n1,n2);
         break;
-        case subtract:
-        result = subtract(n1, n2);
+        case "subtract":
+        answer = subtract(n1, n2);
         break;
-        case multiply:
-        result = multiply(n1, n2);
+        case "multiply":
+        answer = multiply(n1, n2);
         break;
-        case divide:
-        result = divide(n1, n2);
+        case "divide":
+        answer = divide(n1, n2);
         break;
     }
-    return result;
+    return answer;
 }
+
+ acButton = document.getElementById("allCancel");
+ acButton.addEventListener("click", allCancel, false);
+
+ function allCancel(){
+ runningInput.textContent = "";
+ calcMemory = [];
+ }
 
 add = (n1,n2) =>  n1 + n2;
 subtract = (n1,n2) => n1 - n2;
