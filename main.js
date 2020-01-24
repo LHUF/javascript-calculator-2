@@ -37,12 +37,15 @@ function operatorHandler(eventObj){
         console.log(secondNum)
         answer = operate(op, firstNum, secondNum);
         console.log(parseInt(answer))
-        calcMemory.unshift(`${answer}`);
+        calcMemory.unshift(answer);
     }
+    
     calcMemory.push(operator);
-    runningInput.textContent += operator;
+    if(answer === undefined){
+        runningInput.textContent += operator;
+        return;
+    } else runningInput.textContent =+ answer + operator;
   }
-
 
 
 operate = (operation, n1, n2) => {
