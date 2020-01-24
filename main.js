@@ -72,6 +72,7 @@ operate = (operation, n1, n2) => {
  function allCancel(){
  runningInput.textContent = "";
  calcMemory = [];
+ answer = undefined;
  }
 
 add = (n1,n2) =>  n1 + n2;
