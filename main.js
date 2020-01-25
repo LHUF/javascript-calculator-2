@@ -77,14 +77,18 @@ operate = (operation, n1, n2) => {
 
  delButton.addEventListener("click", delLastChar, false);
  function delLastChar(){
-     if(calcMemory.pop === "+" || "-" || "×" || "÷") {
+     let lastItem = calcMemory.pop()
+     if(lastItem === "+" || "-" || "×" || "÷") {
         runningInput.textContent = runningInput.textContent.slice(0,-1);
         calcMemory.pop();
         calcMemory.pop();    
      }
-     else runningInput.textContent = runningInput.textContent.slice(0,-1);
+     else {
+     calcMemory.push(lastItem);
+     runningInput.textContent = runningInput.textContent.slice(0,-1);
+    }
  }
-
+ 
 add = (n1,n2) =>  n1 + n2;
 subtract = (n1,n2) => n1 - n2;
 multiply = (n1,n2) => n1 * n2;
