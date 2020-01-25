@@ -3,6 +3,8 @@ let runningInput = document.getElementById("runninginput");
 const numButtons = document.getElementsByClassName("numBtn");
 const addButton = document.getElementById("add");
 const operatorBtns = document.querySelectorAll(".operator");
+const acButton = document.getElementById("allCancel");
+const delButton = document.getElementById("delete");
 let answer;
 
 
@@ -66,13 +68,21 @@ operate = (operation, n1, n2) => {
     return answer;
 }
 
- acButton = document.getElementById("allCancel");
  acButton.addEventListener("click", allCancel, false);
-
  function allCancel(){
  runningInput.textContent = "";
  calcMemory = [];
  answer = undefined;
+ }
+
+ delButton.addEventListener("click", delLastChar, false);
+ function delLastChar(){
+     if(calcMemory.pop === "+" || "-" || "×" || "÷") {
+        runningInput.textContent = runningInput.textContent.slice(0,-1);
+        calcMemory.pop();
+        calcMemory.pop();    
+     }
+     else runningInput.textContent = runningInput.textContent.slice(0,-1);
  }
 
 add = (n1,n2) =>  n1 + n2;
