@@ -30,10 +30,6 @@ function operatorHandler(eventObj){
         firstNum = parseInt(calcMemory.shift());
         console.log(firstNum)
         let op = calcMemory.shift()
-        if(op === "+") op = "add";
-        if(op === "-") op = "subtract";
-        if(op === "×") op = "multiply";
-        if(op === "÷") op = "divide";
         console.log(op)
         let secondNum = parseInt(calcMemory.shift());
         console.log(secondNum)
@@ -52,16 +48,16 @@ function operatorHandler(eventObj){
 
 operate = (operation, n1, n2) => {
     switch(operation){
-        case "add":
+        case "+":
         answer = add(n1,n2);
         break;
-        case "subtract":
+        case "-":
         answer = subtract(n1, n2);
         break;
-        case "multiply":
+        case "×":
         answer = multiply(n1, n2);
         break;
-        case "divide":
+        case "÷":
         answer = divide(n1, n2);
         break;
     }
@@ -88,7 +84,7 @@ operate = (operation, n1, n2) => {
      runningInput.textContent = runningInput.textContent.slice(0,-1);
     }
  }
- 
+
 add = (n1,n2) =>  n1 + n2;
 subtract = (n1,n2) => n1 - n2;
 multiply = (n1,n2) => n1 * n2;
