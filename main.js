@@ -7,7 +7,6 @@ const acButton = document.getElementById("allCancel");
 const delButton = document.getElementById("delete");
 let answer;
 
-
 const populateDisplay = function(){
     const value = this.getAttribute("data-value");
     runningInput.textContent += value;
@@ -16,35 +15,34 @@ for (var i = 0; i < numButtons.length; i++){
     numButtons[i].addEventListener('click', populateDisplay, false);
 }
 
-
 operatorBtns.forEach(function(btn){
     btn.addEventListener("click", operatorHandler);
   });
+
+function collapseMemStack(calcMemory){
+    const workingStack = calcMemory;
+    while(workingStack.length > 2){
+    firstNum = parseInt(calcMemory.shift());
+    op = calcMemory.shift()
+    secondNum = parseInt(calcMemory.shift());
+    let answer = operate(op, firstNum, secondNum);
+    workingStack.unshift(answer);
+    }
+    return workingStack;
+}
 
 function operatorHandler(eventObj){
     const clickedEl = eventObj.target;
     const operator = clickedEl.textContent;
     const split = runningInput.textContent.split(/[×÷+-]/);
     calcMemory.push((split[split.length -1]));
-    if(calcMemory.length > 2){
-        firstNum = parseInt(calcMemory.shift());
-        console.log(firstNum)
-        let op = calcMemory.shift()
-        console.log(op)
-        let secondNum = parseInt(calcMemory.shift());
-        console.log(secondNum)
-        let answer = operate(op, firstNum, secondNum);
-        console.log(parseInt(answer))
-        calcMemory.unshift(answer);
-    }
-    
+    calcMemory = collapseMemStack(calcMemory);
     calcMemory.push(operator);
     if(answer === undefined){
         runningInput.textContent += operator;
         return;
     } else runningInput.textContent =+ answer + operator;
   }
-
 
 operate = (operation, n1, n2) => {
     switch(operation){
