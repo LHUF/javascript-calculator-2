@@ -5,6 +5,8 @@ const addButton = document.getElementById("add");
 const operatorBtns = document.querySelectorAll(".operator");
 const acButton = document.getElementById("allCancel");
 const delButton = document.getElementById("delete");
+const equalsButton = document.getElementById("equals");
+const resultDisp = document.getElementById("result");
 let answer;
 
 const populateDisplay = function(){
@@ -21,7 +23,7 @@ operatorBtns.forEach(function(btn){
 
 function collapseMemStack(calcMemory){
     const workingStack = calcMemory;
-    while(workingStack.length > 2){
+    while(workingStack.length > 1){
     firstNum = parseInt(calcMemory.shift());
     op = calcMemory.shift()
     secondNum = parseInt(calcMemory.shift());
@@ -43,6 +45,20 @@ function operatorHandler(eventObj){
         return;
     } else runningInput.textContent =+ answer + operator;
   }
+
+equalsButton.addEventListener("click", equals, false);
+function equals(){
+    const lastInput = Number(runningInput.textContent[runningInput.textContent.length-1]);
+    if (isNaN(lastInput)){
+        runningInput.textContent = runningInput.textContent.slice(0,-1);
+        resultDisp.textContent = runningInput.textContent;
+    }
+    else {  
+        calcMemory.push(lastInput);
+        resultDisp.textContent = collapseMemStack(calcMemory);
+    }
+
+}
 
 operate = (operation, n1, n2) => {
     switch(operation){
@@ -67,6 +83,7 @@ operate = (operation, n1, n2) => {
  runningInput.textContent = "";
  calcMemory = [];
  answer = undefined;
+ resultDisp.textContent = "";
  }
 
  delButton.addEventListener("click", delLastChar, false);
