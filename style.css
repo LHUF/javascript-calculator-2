@@ -1,104 +1,141 @@
 #result {
-    text-align: right;
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: 3%;
-    margin-top: 10px;
-    font-size: 45px;
-    font-family: monospace; 
+  text-align: right;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  margin-top: 10px;
+  font-size: 45px;
+  font-family: monospace;
 }
 
 #runninginput {
-    text-align: right;
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-top: 25px;
-    height: 30px;
-    font-size: 30px;
-    border-bottom: 1px lightgrey solid;
+  text-align: right;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 25px;
+  height: 30px;
+  font-size: 30px;
+  border-bottom: 1px lightgrey solid;
 }
 
 #display {
-    grid-column: 1 / 5;
-    grid-row: 1 / 1;
-    background-color: #008CBA;
-    border-radius: 8px;
-    border-bottom: 1px solid  black;
-    color: white;
+  grid-column: 1 / 5;
+  grid-row: 1 / 1;
+  background-color: #008cba;
+  border-radius: 8px;
+  border-bottom: 1px solid black;
+  color: white;
 }
 
 #calcContainer {
-    display: grid;
-    gap: 3px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr;
-    border: black;
-    height: 550px;
-    width: 450px;
-    margin: auto;
-    position: relative;
-    background-color: lightslategray;
-    border: 2px solid #2c2c2c;
-    border-radius: 8px;
+  display: grid;
+  gap: 3px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+  border: black;
+  height: 550px;
+  width: 450px;
+  margin: auto;
+  position: relative;
+  background-color: lightslategray;
+  border: 2px solid #2c2c2c;
+  border-radius: 8px;
 }
 
 h1 {
-    font-family: monospace;
-    background-color: slategray;
-    color: black;
-    border-style: double;
-    border-color: blue;
-    padding: 10px 20px;
-    display: inline-block;
+  font-family: monospace;
+  background-color: slategray;
+  color: black;
+  border-style: double;
+  border-color: blue;
+  padding: 10px 20px;
+  display: inline-block;
 }
 
 body {
-    background-color: darkslategrey;
-    text-align: center;
+  background-color: darkslategrey;
+  text-align: center;
 }
 
 /*button styling */
 .funcBtn {
-    background-color: #f44336;
-    border-radius: 8px;
-    border-color:  black;
-    font-size: 25px;
-    transition-duration: 0.4s;
+  background-color: #f44336;
+  border-radius: 8px;
+  border-color: black;
+  font-size: 25px;
+  transition-duration: 0.4s;
 }
 .numBtn {
-    background-color: #555555;
-    border-radius: 8px;
-    border-color: black;
-    font-size: 30px;
-    transition-duration: 0.4s;
+  background-color: #555555;
+  border-radius: 8px;
+  border-color: black;
+  font-size: 30px;
+  transition-duration: 0.4s;
 }
 .funcBtn:hover {
-    color: white;
-    transform: scale(1.1);
-    border-color: black;
+  color: white;
+  transform: scale(1.1);
+  border-color: black;
 }
 .numBtn:hover {
-    color: white;
-    transform: scale(1.1);
-    border-color: black;
+  color: white;
+  transform: scale(1.1);
+  border-color: black;
 }
 
 /*button placement */
-#allCancel {grid-area: 2 / 1 / 2 / 3;}
-#delete {grid-area: 2 / 3 / 2 / 3;}
-#add {grid-area: 2 / 4 / 2 / 4;}
-#sub {grid-area: 3 / 4 / 3 / 4;}
-#mult {grid-area: 4 / 4 / 4 / 4;}
-#divi {grid-area: 5 / 4 / 5 / 4;}
-#equals {grid-area: 6 / 3 / 6 / 5; background-color: #4CAF50;}
-#no9 {grid-area: 3 / 3 / 3 / 3;}
-#no8 {grid-area: 3 / 2 / 3 / 2;}
-#no7 {grid-area: 3 / 1 / 3 / 1;}
-#no6 {grid-area: 4 / 3 / 4 / 3;}
-#no5 {grid-area: 4 / 2 / 4 / 2;}
-#no4 {grid-area: 4 / 1 / 4 / 1;}
-#no3 {grid-area: 5 / 3 / 5 / 3;}
-#no2 {grid-area: 5 / 2 / 5 / 2;}
-#no1 {grid-area: 5 / 1 / 5 / 1;}
-#no0 {grid-area: 6 / 2 / 6 / 2;}
-#decimal {grid-area: 6 / 1 / 6 / 1;}
+#allCancel {
+  grid-area: 2 / 1 / 2 / 3;
+}
+#delete {
+  grid-area: 2 / 3 / 2 / 3;
+}
+#add {
+  grid-area: 2 / 4 / 2 / 4;
+}
+#sub {
+  grid-area: 3 / 4 / 3 / 4;
+}
+#mult {
+  grid-area: 4 / 4 / 4 / 4;
+}
+#divi {
+  grid-area: 5 / 4 / 5 / 4;
+}
+#equals {
+  grid-area: 6 / 3 / 6 / 5;
+  background-color: #4caf50;
+}
+#no9 {
+  grid-area: 3 / 3 / 3 / 3;
+}
+#no8 {
+  grid-area: 3 / 2 / 3 / 2;
+}
+#no7 {
+  grid-area: 3 / 1 / 3 / 1;
+}
+#no6 {
+  grid-area: 4 / 3 / 4 / 3;
+}
+#no5 {
+  grid-area: 4 / 2 / 4 / 2;
+}
+#no4 {
+  grid-area: 4 / 1 / 4 / 1;
+}
+#no3 {
+  grid-area: 5 / 3 / 5 / 3;
+}
+#no2 {
+  grid-area: 5 / 2 / 5 / 2;
+}
+#no1 {
+  grid-area: 5 / 1 / 5 / 1;
+}
+#no0 {
+  grid-area: 6 / 2 / 6 / 2;
+}
+#decimal {
+  grid-area: 6 / 1 / 6 / 1;
+}
