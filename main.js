@@ -36,6 +36,8 @@ function collapseMemStack(calcMemory) {
 function operatorHandler(eventObj) {
   const clickedEl = eventObj.target;
   const operator = clickedEl.textContent;
+  if (runningInput.textContent === "")
+    runningInput.textContent = resultDisp.textContent;
   const split = runningInput.textContent.split(/[×÷+-]/);
   calcMemory.push(split[split.length - 1]);
   calcMemory = collapseMemStack(calcMemory);
@@ -52,12 +54,15 @@ function equals() {
     runningInput.textContent[runningInput.textContent.length - 1]
   );
   if (isNaN(lastInput)) {
-    runningInput.textContent = runningInput.textContent.slice(0, -1);
-    resultDisp.textContent = runningInput.textContent;
-  } else {
-    calcMemory.push(lastInput);
-    resultDisp.textContent = collapseMemStack(calcMemory);
+    runningInput.textContent = runningInput.textContent.splice(0, -1);
   }
+  const split = runningInput.textContent.split(/[×÷+-]/);
+  calcMemory.push(split[split.length - 1]);
+  calcMemory = collapseMemStack(calcMemory);
+
+  runningInput.textContent = "";
+  resultDisp.textContent = calcMemory[0];
+  calcMemory = [];
 }
 
 operate = (operation, n1, n2) => {
