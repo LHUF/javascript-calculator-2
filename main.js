@@ -24,9 +24,9 @@ operatorBtns.forEach(function(btn) {
 function collapseMemStack(calcMemory) {
   const workingStack = calcMemory;
   while (workingStack.length > 1) {
-    firstNum = parseInt(calcMemory.shift());
+    firstNum = Number(calcMemory.shift());
     op = calcMemory.shift();
-    secondNum = parseInt(calcMemory.shift());
+    secondNum = Number(calcMemory.shift());
     let answer = operate(op, firstNum, secondNum);
     workingStack.unshift(answer);
   }
